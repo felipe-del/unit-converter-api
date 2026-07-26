@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Unit Converter API</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; line-height: 1.6; color: #222; }
+  code, pre { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+  pre { padding: 12px; overflow-x: auto; }
+  h1 { margin-bottom: 0; }
+  .sub { color: #666; margin-top: 4px; }
+  h2 { margin-top: 32px; }
+</style>
+</head>
+<body>
+  <h1>Unit Converter API</h1>
+  <p class="sub">API REST para conversión de unidades de distancia, temperatura y peso.</p>
+
+  <h2>1. Distancia</h2>
+  <p>Unidades: <code>metros, kilometros, centimetros, millas, yardas, pies, pulgadas</code></p>
+  <pre>GET /api/convert-distance?value=5&from=kilometros&to=millas</pre>
+
+  <h2>2. Temperatura</h2>
+  <p>Unidades: <code>celsius, kelvin, fahrenheit</code></p>
+  <pre>GET /api/convert-temperature?value=100&from=celsius&to=fahrenheit</pre>
+
+  <h2>3. Peso</h2>
+  <p>Unidades: <code>kilos, gramos, toneladas, libras, onzas</code></p>
+  <pre>GET /api/convert-weight?value=10&from=kilos&to=libras</pre>
+
+  <h2>Respuesta de éxito</h2>
+  <pre>{
+  "success": true,
+  "data": {
+    "value": 5,
+    "from": "kilometros",
+    "to": "millas",
+    "result": 3.10686,
+    "formula": "value * 0.621371"
+  }
+}</pre>
+
+  <h2>Respuesta de error</h2>
+  <pre>{
+  "success": false,
+  "error": "Unidad no válida",
+  "message": "La unidad 'kilometro' no está soportada"
+}</pre>
+</body>
+</html>

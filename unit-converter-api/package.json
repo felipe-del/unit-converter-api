@@ -1,0 +1,13 @@
+{
+  "name": "unit-converter-api",
+  "version": "1.0.0",
+  "description": "API REST de conversión de unidades (distancia, temperatura, peso) usando Netlify Functions",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "license": "MIT"
+}
